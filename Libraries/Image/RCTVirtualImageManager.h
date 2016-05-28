@@ -5,14 +5,10 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule LinkingIOS
- * @flow
  */
-'use strict';
 
-var Linking = require('Linking');
+#import "RCTViewManager.h"
 
-console.warn('LinkingIOS is deprecated. Use Linking instead');
+@interface RCTVirtualImageManager : RCTViewManager
 
-module.exports = Linking;
+@end

@@ -7,11 +7,10 @@ LOCAL_MODULE := libreactnativejni
 LOCAL_SRC_FILES := \
   JExecutorToken.cpp \
   JMessageQueueThread.cpp \
-  JniJSModulesUnbundle.cpp \
   JSCPerfLogging.cpp \
   JSLoader.cpp \
   JSLogging.cpp \
-  NativeArray.cpp \
+  JniJSModulesUnbundle.cpp \
   OnLoad.cpp \
   ProxyExecutor.cpp \
 
@@ -24,7 +23,7 @@ LOCAL_CFLAGS += $(CXX11_FLAGS)
 LOCAL_EXPORT_CPPFLAGS := $(CXX11_FLAGS)
 
 LOCAL_LDLIBS += -landroid
-LOCAL_SHARED_LIBRARIES := libfolly_json libfb libjsc libglog_init
+LOCAL_SHARED_LIBRARIES := libfolly_json libfb libjsc libglog_init libreactnativejnifb
 LOCAL_STATIC_LIBRARIES := libreactnative
 
 include $(BUILD_SHARED_LIBRARY)
@@ -35,3 +34,4 @@ $(call import-module,folly)
 $(call import-module,fbgloginit)
 $(call import-module,fb)
 $(call import-module,jsc)
+$(call import-module,xreact/jni)

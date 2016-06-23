@@ -170,6 +170,10 @@ const APIExamples = [
     module: require('./PanResponderExample'),
   },
   {
+    key: 'PermissionsExampleAndroid',
+    module: require('./PermissionsExampleAndroid'),
+  },
+  {
     key: 'PointerEventsExample',
     module: require('./PointerEventsExample'),
   },
@@ -184,6 +188,10 @@ const APIExamples = [
   {
     key: 'ToastAndroidExample',
     module: require('./ToastAndroidExample'),
+  },
+  {
+    key: 'TransformExample',
+    module: require('./TransformExample'),
   },
   {
     key: 'VibrationExample',

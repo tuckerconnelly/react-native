@@ -50,7 +50,9 @@ function setUpConsole() {
   const ExceptionsManager = require('ExceptionsManager');
   ExceptionsManager.installConsoleErrorReporter();
 
-  require('RCTLog');
+  if (__DEV__) {
+    require('RCTLog');
+  }
 }
 
 /**
@@ -134,6 +136,7 @@ function setUpErrorHandler() {
       require('ExceptionsManager').handleException(e, isFatal);
     } catch (ee) {
       console.log('Failed to print error: ', ee.message);
+      throw e;
     }
   }
 
@@ -213,7 +216,7 @@ function setUpMapAndSet() {
 function setUpDevTools() {
   if (__DEV__) {
     // not when debugging in chrome
-    if (!window.document) {
+    if (!window.document && require('Platform').OS === 'ios') {
       const setupDevtools = require('setupDevtools');
       setupDevtools();
     }
